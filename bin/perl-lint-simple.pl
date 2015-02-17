@@ -44,7 +44,7 @@ say Dumper($violations);
 say "\n----";
 say "Target files";
 say "----";
-say "@target_files";
+say join("\n", @target_files);
 
 sub retrieve {
     my ($dir) = @_;
