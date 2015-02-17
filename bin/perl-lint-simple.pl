@@ -41,6 +41,10 @@ for my $dir (@target_dirs) {
     &retrieve($dir);
 }
 
+if (!scalar(@target_files)) {
+    return;
+}
+
 my $linter = Perl::Lint->new;
 my $violations = $linter->lint(\@target_files);
 say Dumper($violations);
