@@ -34,25 +34,12 @@ use utf8;
 use feature qw(say);
 use Perl::Lint;
 
-my @target_files = ();
 my @target_dirs = scalar(@ARGV) ? @ARGV : ('lib');
+my $linter = Perl::Lint->new;
 
 for my $dir (@target_dirs) {
     &retrieve($dir);
 }
-
-if (!scalar(@target_files)) {
-    return;
-}
-
-my $linter = Perl::Lint->new;
-my $violations = $linter->lint(\@target_files);
-say Dumper($violations);
-
-say "\n----";
-say "Target files";
-say "----";
-say join("\n", @target_files);
 
 sub retrieve {
     my ($dir) = @_;
@@ -63,7 +50,9 @@ sub retrieve {
             return;
         }
         if ($file =~ m/\.(pm)|(pl)|(t)$/) {
-            push(@target_files, $file);
+            my $violations = $linter->lint(\@target_files);
+            say "---- $file";
+            say Dumper($violations);
         }
     }
 }
