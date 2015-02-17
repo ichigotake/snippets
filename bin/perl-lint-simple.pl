@@ -1,5 +1,29 @@
 #!/usr/bin/env perl
 
+=head1 NAME
+
+perl-lint-simple.pl - A simple Perl::Lint runner
+
+=head1 GETTING START
+
+    $ curl -l http://tinyurl.com/ichigotake-perl-lint-simple.pl > bin/perl-lint-simple.pl
+    $ chmod +x bin/perl-lint-simple.pl
+    $ bin/perl-lint-simple.pl target_dir1 target_dir2 ... # or default "lib"
+
+Lint results to stdout with Data::Dumper.
+
+=head1 LICENSE
+
+Copyright (C) ichigotake.
+
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+
+=head1 AUTHOR
+
+ichigotake <ichigotake.san@gmail.com>
+
+=cut
+
 use strict;
 use warnings;
 use utf8;
