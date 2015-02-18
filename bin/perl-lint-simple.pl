@@ -7,7 +7,7 @@ perl-lint-simple.pl - A simple Perl::Lint runner
 =head1 GETTING START
 
     ### install script
-    $ curl -l http://tinyurl.com/ichigotake-perl-lint-simple.pl > bin/perl-lint-simple.pl
+    $ curl -L http://tinyurl.com/ichigotake-perl-lint-simple > bin/perl-lint-simple.pl
     $ chmod +x bin/perl-lint-simple.pl
     ### install dependencies
     $ cpanm Perl::Lint
