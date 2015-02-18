@@ -7,12 +7,12 @@ perl-lint-simple.pl - A simple Perl::Lint runner
 =head1 GETTING START
 
     ### install script
-    $ curl -L http://tinyurl.com/ichigotake-perl-lint-simple > bin/perl-lint-simple.pl
-    $ chmod +x bin/perl-lint-simple.pl
+    $ curl -L http://bit.ly/ichigotake-perl-lint-simple > bin/perl-lint-simple
+    $ chmod +x bin/perl-lint-simple
     ### install dependencies
     $ cpanm Perl::Lint
     ### run Perl::Lint
-    $ bin/perl-lint-simple.pl target_dir1 target_dir2 ... # or default "lib"
+    $ bin/perl-lint-simple target_dir1 target_dir2 ... # or default "lib"
 
 Lint results to stdout with Data::Dumper.
 
