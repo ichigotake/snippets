@@ -32,6 +32,7 @@ use strict;
 use warnings;
 use utf8;
 use feature qw(say);
+use Data::Dumper;
 use Perl::Lint;
 
 my @target_dirs = scalar(@ARGV) ? @ARGV : ('lib');
