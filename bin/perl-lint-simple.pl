@@ -50,7 +50,7 @@ sub retrieve {
             return;
         }
         if ($file =~ m/\.(pm)|(pl)|(t)$/) {
-            my $violations = $linter->lint(\@target_files);
+            my $violations = $linter->lint($file);
             say "---- $file";
             say Dumper($violations);
         }
