@@ -12,7 +12,8 @@ perl-lint-simple.pl - A simple Perl::Lint runner
     ### install dependencies
     $ cpanm Perl::Lint
     ### run Perl::Lint
-    $ bin/perl-lint-simple target_dir1 target_dir2 ... # or default "lib"
+    $ bin/perl-lint-simple target_dir1 target_dir2 ... > violations # or default "lib"
+    $ less violations
 
 Lint results to stdout with Data::Dumper.
 
