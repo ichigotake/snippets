@@ -7,12 +7,13 @@ perl-lint-simple.pl - A simple Perl::Lint runner
 =head1 GETTING START
 
     ### install script
-    $ curl -l http://tinyurl.com/ichigotake-perl-lint-simple.pl > bin/perl-lint-simple.pl
-    $ chmod +x bin/perl-lint-simple.pl
+    $ curl -L http://bit.ly/ichigotake-perl-lint-simple > bin/perl-lint-simple
+    $ chmod +x bin/perl-lint-simple
     ### install dependencies
     $ cpanm Perl::Lint
     ### run Perl::Lint
-    $ bin/perl-lint-simple.pl target_dir1 target_dir2 ... # or default "lib"
+    $ bin/perl-lint-simple target_dir1 target_dir2 ... > violations # or default "lib"
+    $ less violations
 
 Lint results to stdout with Data::Dumper.
 
@@ -32,6 +33,7 @@ use strict;
 use warnings;
 use utf8;
 use feature qw(say);
+use Data::Dumper;
 use Perl::Lint;
 
 my @target_dirs = scalar(@ARGV) ? @ARGV : ('lib');
@@ -50,7 +52,7 @@ sub retrieve {
             return;
         }
         if ($file =~ m/\.(pm)|(pl)|(t)$/) {
-            my $violations = $linter->lint(\@target_files);
+            my $violations = $linter->lint($file);
             say "---- $file";
             say Dumper($violations);
         }
