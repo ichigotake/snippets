@@ -8,3 +8,6 @@
 
 - [How to get Rakudo Perl 6 | rakudo.org](http://rakudo.org/how-to-get-rakudo/)
 
+## Learning
+
+- [kazhiramatsu/perl6-entrance](https://github.com/kazhiramatsu/perl6-entrance)
